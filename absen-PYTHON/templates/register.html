@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Wajah</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        cursor: pointer;
+      }
+
+      button:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+          0 12px 40px 0 rgba(0, 0, 0, 0.19);
+      }
+      h1 {
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+          0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+          0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+      }
+      footer {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pendaftaran Wajah</h1>
+    <form method="POST" action="/register">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required />
+      <br /><br />
+      <button type="submit">Daftar</button>
+      <button><a href="/">Kembali</a></button>
+    </form>
+    <br />
+    <video id="video" width="640" height="480" autoplay></video>
+    <h4 style="text-align: right">
+      <b>IF HAVE A SOME ERROR PLEASE CONTAC A CUSTOMER SERVICE !!!!</b>
+    </h4>
+
+    <footer>
+      <p>copyright @JSserver 2024 - 9999 | Made By : JayaSedana</p>
+    </footer>
+
+    <script>
+      (function () {
+        var video = document.getElementById("video");
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+          navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then(function (stream) {
+              video.srcObject = stream;
+              video.play();
+            });
+        }
+      })();
+    </script>
+  </body>
+</html>
